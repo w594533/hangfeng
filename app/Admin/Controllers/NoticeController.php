@@ -24,8 +24,8 @@ class NoticeController extends Controller
     {
         return Admin::content(function (Content $content) {
 
-            $content->header('header');
-            $content->description('description');
+            $content->header('列表');
+            $content->description('通知公告');
 
             $content->body($this->grid());
         });
@@ -41,8 +41,8 @@ class NoticeController extends Controller
     {
         return Admin::content(function (Content $content) use ($id) {
 
-            $content->header('header');
-            $content->description('description');
+            $content->header('编辑');
+            $content->description('通知公告');
 
             $content->body($this->form()->edit($id));
         });
@@ -57,8 +57,8 @@ class NoticeController extends Controller
     {
         return Admin::content(function (Content $content) {
 
-            $content->header('header');
-            $content->description('description');
+            $content->header('新增');
+            $content->description('通知公告');
 
             $content->body($this->form());
         });
@@ -74,16 +74,16 @@ class NoticeController extends Controller
         return Admin::grid(Post::class, function (Grid $grid) {
             $grid->model()->where('category_id', 23);
             $grid->id('ID')->sortable();
-            $grid->name('标题')->badge('green');
+            $grid->name('标题');
             //$grid->slug('内容');
-            $grid->cover('配图')->display(function(){
-                if (is_null($this->cover) || empty($this->cover)) {
-                    return "暂无图片哦!~";
+            $grid->cover('配图')->display(function ($cover) {
+                if (empty($cover) || is_null($cover)) {
+                    return '暂无图片';
                 }
-
-                $image = config('app.url') . '/storage/' . $this->cover;
-                return '<img src="'. $image.'">';
-            });
+                $imges = explode(',', $cover);
+                return $imges;
+            })->image('',100);
+            
             $grid->category_id('归属')->display(function(){
                 return Category::findOrFail($this->category_id)->title;
             });

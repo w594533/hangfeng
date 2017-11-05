@@ -11,6 +11,22 @@
 |
 */
 
+function array2object($array) {
+  if (is_array($array)) {
+    $obj = new StdClass();
+    foreach ($array as $key => $val){
+      $obj->$key = $val;
+    }
+  }
+  else { $obj = $array; }
+  return $obj;
+}
+
 Route::get('/', function () {
-    return view('welcome');
+    $data = '12312';
+    return view('welcome', compact('data'));
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

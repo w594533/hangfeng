@@ -7,3 +7,319 @@
 
 // Bootstrap
 @import "~bootstrap-sass/assets/stylesheets/bootstrap";
+@-webkit-keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                -webkit-transform: translate3d(0, 100%, 0);
+                transform: translate3d(0, 100%, 0)
+            }
+            100% {
+                opacity: 1;
+                -webkit-transform: none;
+                transform: none
+            }
+        }
+@keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                -webkit-transform: translate3d(0, 100%, 0);
+                -ms-transform: translate3d(0, 100%, 0);
+                transform: translate3d(0, 100%, 0)
+            }
+            100% {
+                opacity: 1;
+                -webkit-transform: none;
+                -ms-transform: none;
+                transform: none
+            }
+        }
+@-webkit-keyframes fadeInDown {
+            0% {
+                opacity: 0;
+                -webkit-transform: translate3d(0,-100%,0);
+                transform: translate3d(0,-100%,0)
+            }
+
+            100% {
+                opacity: 1;
+                -webkit-transform: none;
+                transform: none
+            }
+        }
+
+@keyframes fadeInDown {
+            0% {
+                opacity: 0;
+                -webkit-transform: translate3d(0,-100%,0);
+                -ms-transform: translate3d(0,-100%,0);
+                transform: translate3d(0,-100%,0)
+            }
+            100% {
+                opacity: 1;
+                -webkit-transform: none;
+                -ms-transform: none;
+                transform: none
+            }
+        }
+@keyframes fadeInLeft {
+            0% {
+                opacity: 0;
+                -webkit-transform: translate3d(-100%,0,0);
+                -ms-transform: translate3d(-100%,0,0);
+                transform: translate3d(-100%,0,0)
+            }
+            100% {
+                opacity: 1;
+                -webkit-transform: none;
+                -ms-transform: none;
+                transform: none
+            }
+        }
+@keyframes fadeInRight {
+            0% {
+                opacity: 0;
+                -webkit-transform: translate3d(100%,0,0);
+                -ms-transform: translate3d(100%,0,0);
+                transform: translate3d(100%,0,0)
+            }
+            100% {
+                opacity: 1;
+                -webkit-transform: none;
+                -ms-transform: none;
+                transform: none
+            }
+        }
+@keyframes fade {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+#app .banner p{
+  animation: fadeInLeft 1s .1s both;
+}
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+.slide-fade-leave-active {
+  transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to
+/* .slide-fade-leave-active for below version 2.1.8 */ {
+  transform: translateX(100vw);
+  opacity: 0;
+}
+#app {
+  font-family: "微软雅黑",Microsoft YaHei,'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100vh;
+}
+/* #app>div{
+  position: absolute;
+  top: 0;
+  left: 0;
+} */
+#app>.nav{
+  height: 6.8vw;
+  line-height: 6.8vw;
+  font-size: .8vw;
+  position: relative;
+  z-index: 3;
+}
+#app>.nav>div{
+  float: left;
+}
+#app>.nav>.logo{
+  line-height: 0;
+  width: 11%;
+  margin-left: 16%;
+  margin-right: 3.6vw;
+  margin-top: 2.2vw
+}
+#app>.nav>.detail>div{
+  display: inline-block;
+  position: relative;
+}
+#app>.nav>.detail span{
+  margin-left: 1vw;
+  padding: .4vw 1.4vw;
+  border-radius: .8vw;
+  cursor: pointer;
+  color: #fff;
+}
+#app>.nav>.detail .fontBlack{
+  color: #333;
+}
+#app>.nav>.detail span:hover{
+  background: #008be8;
+  color: #fff;
+}
+#app>.nav>.detail ul{
+  background: #fff;
+  position: absolute;
+  left: -1vw;
+  top: 5vw;
+  right: -2vw;
+  border-top: 2px solid #008be8;
+  padding:1.5vw 0;
+  display: none;
+}
+#app>.nav>.detail ul li{
+  height: 2.5vw;
+  line-height: 2.5vw;
+  text-align: center;
+  font-size: .7vw;
+  cursor: pointer;
+}
+#app>.nav>.detail ul li:hover{
+  background: #008be8;
+  color: #fff;
+}
+#app>.nav>.detail .active{
+  background: #008be8;
+  color: #fff;
+}
+#app>.nav>.lang{
+  margin-left: 2vw;
+}
+#app>.nav>.lang span{
+  margin-left: 1vw;
+  padding: .4vw .8vw .3vw;
+  background: #eeeeee;
+  border-radius: .2vw;
+  cursor: pointer;
+}
+#app>.nav>.lang .active{
+  background: #008be8;
+  color: #fff;
+}
+#app>.nav> .clap{
+  display: none;
+}
+#app>.clapnav{
+  display: none;
+}
+.footer{
+  width: 100%;
+  background: #008be8;
+  text-align: center;
+  color: #fff;
+  padding-bottom: 1vw;
+}
+.footer .icon span{
+  margin-right: 1.5vw;
+  cursor: pointer;
+}
+.footer .nav span{
+  display: inline-block;
+  margin-top: 2vw;
+  width: 6vw;
+  cursor: pointer;
+}
+.footer p{
+  margin-top: 2.5vw;
+}
+@media screen and (max-width:1200px){
+  #app>.nav>.logo{
+    margin-left: 12%;
+  }
+  .footer .nav span{
+    margin-top: 1vw;
+    width: 8vw;
+  }
+  .footer p{
+    margin-top: 1.3vw;
+  }
+}
+@media screen and (max-width:990px){
+  #app>.nav>.logo{
+    margin-right: 1.8vw;
+    margin-left: 5%;
+    width: 16.5%;
+    margin-top: 1.7vw;
+  }
+  .footer{
+    font-size: 12px;
+  }
+  .footer .icon span{
+    margin-right: 3vw;
+  }
+  .footer .nav span{
+    display: inline-block;
+    margin-top: .5vw;
+    width: 10vw;
+  }
+  .footer p{
+    margin-top: .8vw;
+  }
+}
+@media screen and (max-width:767px){
+  #app>.nav{
+    height: 0;
+  }
+  #app>.nav .detail{
+    display: none;
+  }
+  #app>.nav .lang{
+    display: none;
+  }
+  #app>.nav .logo{
+    width: 50%;
+    margin-top: 5vw;
+  }
+  #app>.nav .clap{
+    display: block;
+    float: right;
+    margin-top: 7vw;
+    margin-right: 5vw;
+    height: 6.5vw;
+  }
+  #app .clapnav{
+    display: block;
+    position: absolute;
+    top: 0;
+    height: 85vh;
+    width: 100%;
+    z-index: 2;
+    background: rgba(0,0,0,.8);
+    text-align: center;
+    color: #fff;
+    padding-top: 15vh;
+    line-height: 10vh;
+    font-size: 3.5vh;
+  }
+  #app .clapnav ul{
+    height: 0px;
+    overflow: hidden;
+    transition: height .3s;
+  }
+  #app .clapnav span{
+    padding: 5px 0;
+  }
+  #app .clapnav .active{
+    border-bottom: 2px solid #fff;
+  }
+  #app .clapnav ul{
+    line-height: 5vh;
+    font-size: 2.5vh;
+  }
+  .footer{
+    font-size: 12px;
+    height: auto;
+    padding-bottom: 2vw;
+  }
+  .footer .icon span{
+    margin-right: 3vw;
+  }
+  .footer .nav span{
+    margin-top: 2vw;
+    width: auto;
+    padding: 0 2vw;
+  }
+  .footer p{
+    margin-top: 2vw;
+  }
+}

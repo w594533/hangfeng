@@ -35,11 +35,15 @@ Route::group([
 
     $router->resource('/industry_information', 'IndustryInformationController');
 
-    $router->resource('/focus_media', 'IndustryInformationController');
+    $router->resource('/focus_media', 'FocusMediaController');
 
     $router->resource('/notice', 'NoticeController');
 
     $router->resource('/recruit', 'RecruitController');
+
+    $router->resource('/products', 'ProductController');
+
+    $router->resource('/cooperations', 'CooperationController');
 
     $router->resource('/system_info', 'SystemInfoController');
 

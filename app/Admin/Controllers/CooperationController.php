@@ -2,8 +2,9 @@
 
 namespace App\Admin\Controllers;
 
+use App\Models\Cooperation;
 use App\Models\Category;
-use App\Models\Post;
+
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Facades\Admin;
@@ -11,7 +12,7 @@ use Encore\Admin\Layout\Content;
 use App\Http\Controllers\Controller;
 use Encore\Admin\Controllers\ModelForm;
 
-class FocusMediaController extends Controller
+class CooperationController extends Controller
 {
     use ModelForm;
 
@@ -25,7 +26,7 @@ class FocusMediaController extends Controller
         return Admin::content(function (Content $content) {
 
             $content->header('列表');
-            $content->description('媒体焦点');
+            $content->description('合作地区');
 
             $content->body($this->grid());
         });
@@ -42,7 +43,7 @@ class FocusMediaController extends Controller
         return Admin::content(function (Content $content) use ($id) {
 
             $content->header('编辑');
-            $content->description('媒体焦点');
+            $content->description('合作地区');
 
             $content->body($this->form()->edit($id));
         });
@@ -58,7 +59,7 @@ class FocusMediaController extends Controller
         return Admin::content(function (Content $content) {
 
             $content->header('新增');
-            $content->description('媒体焦点');
+            $content->description('合作地区');
 
             $content->body($this->form());
         });
@@ -71,24 +72,16 @@ class FocusMediaController extends Controller
      */
     protected function grid()
     {
-        return Admin::grid(Post::class, function (Grid $grid) {
-            $grid->model()->where('category_id', 22);
-            $grid->id('ID')->sortable();
-            $grid->name('标题');
-            //$grid->slug('内容');
-            $grid->cover('配图')->display(function(){
-                if (is_null($this->cover) || empty($this->cover)) {
-                    return "暂无图片哦!~";
-                }
+        return Admin::grid(Cooperation::class, function (Grid $grid) {
 
-                $image = config('app.url') . '/storage/' . $this->cover;
-                return '<img src="'. $image.'" width="100">';
-            });
-            $grid->category_id('归属')->display(function(){
+            $grid->id('ID')->sortable();
+            $grid->name('名称');
+            $grid->logo('LOGO')->image('', 100, 100);
+            $grid->category_id('所属分类')->display(function(){
                 return Category::findOrFail($this->category_id)->title;
             })->badge('green');
-            $grid->created_at('创建时间');
-            $grid->updated_at('发布时间');
+            $grid->created_at();
+            $grid->updated_at();
         });
     }
 
@@ -99,14 +92,19 @@ class FocusMediaController extends Controller
      */
     protected function form()
     {
-        return Admin::form(Post::class, function (Form $form) {
+        return Admin::form(Cooperation::class, function (Form $form) {
+          $categorySelects = [];
+          $categories = Category::where('parent_id', 48)->get();
+          foreach ($categories as $key => $category) {
+            $categorySelects[$category->id] = $category->title;
+          }
 
             $form->display('id', 'ID');
-            $form->text('title', '标题');
-            $form->editor('slug', '内容');
-            $form->image('cover', '配图')->uniqueName()->move('/upload/company_dynamics/image');
-            $form->display('created_at', 'Created At');
-            $form->display('updated_at', 'Updated At');
+            $form->select('category_id', '分类')->options($categorySelects)->rules('required');
+            $form->text('name', '名称');
+            $form->image('logo', '图片')->removable()->uniqueName()->move('/upload/cooperation/image');
+            $form->display('created_at', '创建时间');
+            $form->display('updated_at', '更新时间');
         });
     }
 }

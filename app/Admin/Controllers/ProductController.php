@@ -2,8 +2,9 @@
 
 namespace App\Admin\Controllers;
 
+use App\Models\Product;
 use App\Models\Category;
-use App\Models\Post;
+
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Facades\Admin;
@@ -11,7 +12,7 @@ use Encore\Admin\Layout\Content;
 use App\Http\Controllers\Controller;
 use Encore\Admin\Controllers\ModelForm;
 
-class RecruitController extends Controller
+class ProductController extends Controller
 {
     use ModelForm;
 
@@ -24,8 +25,8 @@ class RecruitController extends Controller
     {
         return Admin::content(function (Content $content) {
 
-            $content->header('header');
-            $content->description('description');
+            $content->header('产品列表');
+            $content->description('产品列表');
 
             $content->body($this->grid());
         });
@@ -41,8 +42,8 @@ class RecruitController extends Controller
     {
         return Admin::content(function (Content $content) use ($id) {
 
-            $content->header('列表');
-            $content->description('招贤纳士');
+            $content->header('编辑');
+            $content->description('编辑');
 
             $content->body($this->form()->edit($id));
         });
@@ -58,7 +59,7 @@ class RecruitController extends Controller
         return Admin::content(function (Content $content) {
 
             $content->header('新增');
-            $content->description('招贤纳士');
+            $content->description('新增');
 
             $content->body($this->form());
         });
@@ -71,15 +72,17 @@ class RecruitController extends Controller
      */
     protected function grid()
     {
-        return Admin::grid(Post::class, function (Grid $grid) {
-            $grid->model()->where('category_id', 24);
+        return Admin::grid(Product::class, function (Grid $grid) {
             $grid->id('ID')->sortable();
-            $grid->name('职位名称');
-            $grid->category_id('归属')->display(function(){
+            $grid->name('名称');
+            $grid->category_id('所属分类')->display(function(){
                 return Category::findOrFail($this->category_id)->title;
             })->badge('green');
-            $grid->created_at('创建时间');
-            $grid->updated_at('发布时间');
+            // 显示多图
+            $grid->img('图片')->image('', 100, 100);
+
+            // $grid->created_at();
+            // $grid->updated_at();
         });
     }
 
@@ -90,11 +93,26 @@ class RecruitController extends Controller
      */
     protected function form()
     {
-        return Admin::form(Post::class, function (Form $form) {
+        return Admin::form(Product::class, function (Form $form) {
+
+          $categorySelects = [];
+          $categories = Category::where('parent_id', 7)->get();
+          foreach ($categories as $key => $category) {
+            $categorySelects[$category->id] = $category->title;
+            //查找子节点
+            $childrenCategories = $category->childrenCategories;
+
+            foreach ($childrenCategories as $key_c => $childrenCategory) {
+              $categorySelects[$childrenCategory->id] = '|---- '. $childrenCategory->title;
+            }
+          }
+
 
             $form->display('id', 'ID');
-            $form->text('title', '职位名称');
-            $form->editor('slug', '职位描述');
+            $form->text('name', '名称');
+            $form->select('category_id', '分类')->options($categorySelects)->rules('required');
+            $form->textarea('detail', '详情')->rows(10)->help('使用Enter键，一行一条');
+            $form->multipleImage('img', '图片')->removable()->uniqueName()->move('/upload/products/image');
             $form->display('created_at', '创建时间');
             $form->display('updated_at', '更新时间');
         });

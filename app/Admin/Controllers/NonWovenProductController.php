@@ -104,8 +104,8 @@ class NonWovenProductController extends Controller
 
             $form->image('image', '图片')->uniqueName()->move('/upload/air_seat_jacket');
             $form->text('description', '描述');
-            $form->display('created_at', 'Created At');
-            $form->display('updated_at', 'Updated At');
+            $form->display('created_at', '创建时间');
+            $form->display('updated_at', '更新时间');
         });
     }
 }

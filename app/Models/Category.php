@@ -21,4 +21,19 @@ class Category extends Model
         $this->setOrderColumn('order');
         $this->setTitleColumn('title');
     }
+
+    public function products()
+    {
+        return $this->hasMany('App\Models\Product');
+    }
+
+    public function cooperations()
+    {
+        return $this->hasMany('App\Models\Cooperation');
+    }
+
+    public function childrenCategories()
+    {
+        return $this->hasMany(self::class, 'parent_id', 'id');
+    }
 }
