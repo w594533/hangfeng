@@ -63,7 +63,7 @@ class HomeController extends Controller
     public function contact()
     {
       $system_info = SystemInfo::find(1);
-      $result['contact'] => [
+      $result['contact'] = [
         [
           "title" => trans('home.contact.tel'),
           "value" => $system_info->phone,
@@ -74,11 +74,11 @@ class HomeController extends Controller
         ],
         [
           "title" => trans("home.contact.email"),
-          "value" => $systems_info->email,
+          "value" => $system_info->email,
         ],
         [
           "title" => trans("home.contact.address"),
-          "value" => $systems_info->address
+          "value" => $system_info->address
         ],
         [
           "title" => trans("home.contact.postal"),
