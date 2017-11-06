@@ -4,178 +4,681 @@ use Illuminate\Database\Seeder;
 
 class CategoriesTableSeeder extends Seeder
 {
+
     /**
-     * Run the database seeds.
+     * Auto generated seed file
      *
      * @return void
      */
     public function run()
     {
+        
+
         \DB::table('categories')->delete();
-
-        \DB::table('categories')->insert([
-
-           0 => [
-               'id' => '1',
-               'title' => '品牌故事',
-               'order' => '1',
-               'parent_id' => '0'
-           ],
-           1 => [
-               'id' => '2',
-               'title' => '品牌介绍',
-               'order' => '1',
-               'parent_id' => '1'
-           ],
-           2 => [
-               'id' => '3',
-               'title' => '品牌荣誉',
-               'order' => '2',
-               'parent_id' => '1'
-           ],
-            3 => [
-                'id' => '4',
+        
+        \DB::table('categories')->insert(array (
+            0 => 
+            array (
+                'id' => 1,
+                'title' => '关于航丰',
+                'image' => NULL,
+                'parent_id' => 0,
+                'description' => NULL,
+                'order' => 1,
+                'created_at' => NULL,
+                'updated_at' => '2017-11-06 15:18:46',
+                'deleted_at' => NULL,
+            ),
+            1 => 
+            array (
+                'id' => 2,
+                'title' => '业务展示',
+                'image' => NULL,
+                'parent_id' => 1,
+                'description' => NULL,
+                'order' => 1,
+                'created_at' => NULL,
+                'updated_at' => '2017-11-06 15:19:08',
+                'deleted_at' => NULL,
+            ),
+            2 => 
+            array (
+                'id' => 3,
+                'title' => '品牌荣誉',
+                'image' => NULL,
+                'parent_id' => 1,
+                'description' => NULL,
+                'order' => 2,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'deleted_at' => NULL,
+            ),
+            3 => 
+            array (
+                'id' => 4,
                 'title' => '合作伙伴',
-                'order' => '3',
-                'parent_id' => '1'
-            ],
-            4 => [
-                'id' => '5',
+                'image' => NULL,
+                'parent_id' => 1,
+                'description' => NULL,
+                'order' => 3,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'deleted_at' => NULL,
+            ),
+            4 => 
+            array (
+                'id' => 5,
                 'title' => '企业文化',
-                'order' => '4',
-                'parent_id' => '1'
-            ],
-            5 => [
-                'id' => '6',
+                'image' => NULL,
+                'parent_id' => 1,
+                'description' => NULL,
+                'order' => 4,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'deleted_at' => NULL,
+            ),
+            5 => 
+            array (
+                'id' => 6,
                 'title' => '发展愿景',
-                'order' => '5',
-                'parent_id' => '1'
-            ],
-
-            6 => [
-                'id' => '7',
+                'image' => NULL,
+                'parent_id' => 1,
+                'description' => NULL,
+                'order' => 5,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'deleted_at' => NULL,
+            ),
+            6 => 
+            array (
+                'id' => 7,
                 'title' => '产品展示',
-                'order' => '1',
-                'parent_id' => '0'
-            ],
-            7 => [
-                'id' => '8',
+                'image' => NULL,
+                'parent_id' => 0,
+                'description' => NULL,
+                'order' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'deleted_at' => NULL,
+            ),
+            7 => 
+            array (
+                'id' => 8,
                 'title' => '航空座椅外套',
-                'order' => '5',
-                'parent_id' => '7'
-            ],
-            8 => [
-                'id' => '9',
+                'image' => NULL,
+                'parent_id' => 7,
+                'description' => NULL,
+                'order' => 5,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'deleted_at' => NULL,
+            ),
+            8 => 
+            array (
+                'id' => 9,
                 'title' => '航空毛毯',
-                'order' => '5',
-                'parent_id' => '7'
-            ],
-            9 => [
-                'id' => '10',
+                'image' => NULL,
+                'parent_id' => 7,
+                'description' => NULL,
+                'order' => 5,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'deleted_at' => NULL,
+            ),
+            9 => 
+            array (
+                'id' => 10,
                 'title' => '梭织毛毯',
-                'order' => '5',
-                'parent_id' => '9'
-            ],
-            10 => [
-                'id' => '11',
+                'image' => NULL,
+                'parent_id' => 9,
+                'description' => NULL,
+                'order' => 5,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'deleted_at' => NULL,
+            ),
+            10 => 
+            array (
+                'id' => 11,
                 'title' => '针织毛毯',
-                'order' => '5',
-                'parent_id' => '9'
-            ],
-            11 => [
-                'id' => '12',
+                'image' => NULL,
+                'parent_id' => 9,
+                'description' => NULL,
+                'order' => 5,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'deleted_at' => NULL,
+            ),
+            11 => 
+            array (
+                'id' => 12,
                 'title' => '无纺布产品',
-                'order' => '5',
-                'parent_id' => '7'
-            ],
-            12 => [
-                'id' => '13',
+                'image' => NULL,
+                'parent_id' => 7,
+                'description' => NULL,
+                'order' => 5,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'deleted_at' => NULL,
+            ),
+            12 => 
+            array (
+                'id' => 13,
                 'title' => '枕巾',
-                'order' => '5',
-                'parent_id' => '12'
-            ],
-            13 => [
-                'id' => '14',
+                'image' => NULL,
+                'parent_id' => 12,
+                'description' => NULL,
+                'order' => 5,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'deleted_at' => NULL,
+            ),
+            13 => 
+            array (
+                'id' => 14,
                 'title' => '航空单品',
-                'order' => '5',
-                'parent_id' => '7'
-            ],
-            14 => [
-                'id' => '15',
+                'image' => NULL,
+                'parent_id' => 7,
+                'description' => NULL,
+                'order' => 5,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'deleted_at' => NULL,
+            ),
+            14 => 
+            array (
+                'id' => 15,
                 'title' => '餐巾',
-                'order' => '5',
-                'parent_id' => '14'
-            ],
-            15 => [
-                'id' => '16',
+                'image' => NULL,
+                'parent_id' => 14,
+                'description' => NULL,
+                'order' => 5,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'deleted_at' => NULL,
+            ),
+            15 => 
+            array (
+                'id' => 16,
                 'title' => '其他航空单品',
-                'order' => '5',
-                'parent_id' => '7'
-            ],
-            16 => [
-                'id' => '17',
+                'image' => NULL,
+                'parent_id' => 7,
+                'description' => NULL,
+                'order' => 5,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'deleted_at' => NULL,
+            ),
+            16 => 
+            array (
+                'id' => 17,
                 'title' => '充气枕',
-                'order' => '5',
-                'parent_id' => '7'
-            ],
-            17 => [
-                'id' => '18',
+                'image' => NULL,
+                'parent_id' => 16,
+                'description' => NULL,
+                'order' => 5,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'deleted_at' => NULL,
+            ),
+            17 => 
+            array (
+                'id' => 18,
                 'title' => '酒店纺织单品',
-                'order' => '5',
-                'parent_id' => '7'
-            ],
-            18 => [
-                'id' => '19',
+                'image' => NULL,
+                'parent_id' => 7,
+                'description' => NULL,
+                'order' => 5,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'deleted_at' => NULL,
+            ),
+            18 => 
+            array (
+                'id' => 19,
                 'title' => '新闻中心',
-                'order' => '1',
-                'parent_id' => '0'
-            ],
-            19 => [
-                'id' => '20',
+                'image' => NULL,
+                'parent_id' => 0,
+                'description' => NULL,
+                'order' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'deleted_at' => NULL,
+            ),
+            19 => 
+            array (
+                'id' => 20,
                 'title' => '公司动态',
-                'order' => '1',
-                'parent_id' => '19'
-            ],
-            20 => [
-                'id' => '21',
+                'image' => NULL,
+                'parent_id' => 19,
+                'description' => NULL,
+                'order' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'deleted_at' => NULL,
+            ),
+            20 => 
+            array (
+                'id' => 21,
                 'title' => '行业资讯',
-                'order' => '1',
-                'parent_id' => '19'
-            ],
-            21 => [
-                'id' => '22',
+                'image' => NULL,
+                'parent_id' => 19,
+                'description' => NULL,
+                'order' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'deleted_at' => NULL,
+            ),
+            21 => 
+            array (
+                'id' => 22,
                 'title' => '媒体焦点',
-                'order' => '1',
-                'parent_id' => '19'
-            ],
-            22 => [
-                'id' => '23',
-                'title' => '通知动态',
-                'order' => '1',
-                'parent_id' => '19'
-            ],
-            23 => [
-                'id' => '24',
+                'image' => NULL,
+                'parent_id' => 19,
+                'description' => NULL,
+                'order' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'deleted_at' => NULL,
+            ),
+            22 => 
+            array (
+                'id' => 23,
+                'title' => '通知公告',
+                'image' => NULL,
+                'parent_id' => 19,
+                'description' => NULL,
+                'order' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'deleted_at' => NULL,
+            ),
+            23 => 
+            array (
+                'id' => 24,
                 'title' => '招贤纳士',
-                'order' => '1',
-                'parent_id' => '0'
-            ],
-            24 => [
-                'id' => '25',
+                'image' => NULL,
+                'parent_id' => 0,
+                'description' => NULL,
+                'order' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'deleted_at' => NULL,
+            ),
+            24 => 
+            array (
+                'id' => 25,
                 'title' => '联系我们',
-                'order' => '1',
-                'parent_id' => '0'
-            ],
-            25 => [
-                'id' => '26',
+                'image' => NULL,
+                'parent_id' => 0,
+                'description' => NULL,
+                'order' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'deleted_at' => NULL,
+            ),
+            25 => 
+            array (
+                'id' => 26,
                 'title' => '系统设置',
-                'order' => '1',
-                'parent_id' => '0'
-            ],
-
-
-
-
-        ]);
+                'image' => NULL,
+                'parent_id' => 0,
+                'description' => NULL,
+                'order' => 1,
+                'created_at' => NULL,
+                'updated_at' => '2017-11-06 15:17:19',
+                'deleted_at' => '2017-11-06 15:17:19',
+            ),
+            26 => 
+            array (
+                'id' => 27,
+                'title' => '航空座椅外套',
+                'image' => NULL,
+                'parent_id' => 8,
+                'description' => NULL,
+                'order' => NULL,
+                'created_at' => '2017-11-05 13:51:26',
+                'updated_at' => '2017-11-05 13:51:26',
+                'deleted_at' => NULL,
+            ),
+            27 => 
+            array (
+                'id' => 28,
+                'title' => '枕套',
+                'image' => NULL,
+                'parent_id' => 12,
+                'description' => NULL,
+                'order' => NULL,
+                'created_at' => '2017-11-05 13:51:52',
+                'updated_at' => '2017-11-05 13:51:52',
+                'deleted_at' => NULL,
+            ),
+            28 => 
+            array (
+                'id' => 29,
+                'title' => '枕头',
+                'image' => NULL,
+                'parent_id' => 12,
+                'description' => NULL,
+                'order' => NULL,
+                'created_at' => '2017-11-05 13:52:05',
+                'updated_at' => '2017-11-05 13:52:05',
+                'deleted_at' => NULL,
+            ),
+            29 => 
+            array (
+                'id' => 30,
+                'title' => '床单',
+                'image' => NULL,
+                'parent_id' => 12,
+                'description' => NULL,
+                'order' => NULL,
+                'created_at' => '2017-11-05 13:52:19',
+                'updated_at' => '2017-11-05 13:52:19',
+                'deleted_at' => NULL,
+            ),
+            30 => 
+            array (
+                'id' => 31,
+                'title' => '被芯',
+                'image' => NULL,
+                'parent_id' => 12,
+                'description' => NULL,
+                'order' => NULL,
+                'created_at' => '2017-11-05 13:52:37',
+                'updated_at' => '2017-11-05 13:52:37',
+                'deleted_at' => NULL,
+            ),
+            31 => 
+            array (
+                'id' => 32,
+                'title' => '桌布',
+                'image' => NULL,
+                'parent_id' => 14,
+                'description' => NULL,
+                'order' => NULL,
+                'created_at' => '2017-11-05 13:52:52',
+                'updated_at' => '2017-11-05 13:52:52',
+                'deleted_at' => NULL,
+            ),
+            32 => 
+            array (
+                'id' => 33,
+                'title' => '枕巾',
+                'image' => NULL,
+                'parent_id' => 14,
+                'description' => NULL,
+                'order' => NULL,
+                'created_at' => '2017-11-05 13:53:05',
+                'updated_at' => '2017-11-05 13:53:05',
+                'deleted_at' => NULL,
+            ),
+            33 => 
+            array (
+                'id' => 34,
+                'title' => '枕套',
+                'image' => NULL,
+                'parent_id' => 14,
+                'description' => NULL,
+                'order' => NULL,
+                'created_at' => '2017-11-05 13:53:18',
+                'updated_at' => '2017-11-05 13:53:18',
+                'deleted_at' => NULL,
+            ),
+            34 => 
+            array (
+                'id' => 35,
+                'title' => '航空被',
+                'image' => NULL,
+                'parent_id' => 14,
+                'description' => NULL,
+                'order' => NULL,
+                'created_at' => '2017-11-05 13:53:32',
+                'updated_at' => '2017-11-05 13:53:32',
+                'deleted_at' => NULL,
+            ),
+            35 => 
+            array (
+                'id' => 36,
+                'title' => '推车布',
+                'image' => NULL,
+                'parent_id' => 14,
+                'description' => NULL,
+                'order' => NULL,
+                'created_at' => '2017-11-05 13:53:48',
+                'updated_at' => '2017-11-05 13:53:48',
+                'deleted_at' => NULL,
+            ),
+            36 => 
+            array (
+                'id' => 37,
+                'title' => '眼罩',
+                'image' => NULL,
+                'parent_id' => 16,
+                'description' => NULL,
+                'order' => NULL,
+                'created_at' => '2017-11-05 13:55:02',
+                'updated_at' => '2017-11-05 13:55:02',
+                'deleted_at' => NULL,
+            ),
+            37 => 
+            array (
+                'id' => 38,
+                'title' => '耳塞',
+                'image' => NULL,
+                'parent_id' => 16,
+                'description' => NULL,
+                'order' => NULL,
+                'created_at' => '2017-11-05 13:55:16',
+                'updated_at' => '2017-11-05 13:55:16',
+                'deleted_at' => NULL,
+            ),
+            38 => 
+            array (
+                'id' => 39,
+                'title' => '耳机',
+                'image' => NULL,
+                'parent_id' => 16,
+                'description' => NULL,
+                'order' => NULL,
+                'created_at' => '2017-11-05 13:55:29',
+                'updated_at' => '2017-11-05 13:55:29',
+                'deleted_at' => NULL,
+            ),
+            39 => 
+            array (
+                'id' => 40,
+                'title' => '袜子',
+                'image' => NULL,
+                'parent_id' => 16,
+                'description' => NULL,
+                'order' => NULL,
+                'created_at' => '2017-11-05 13:55:41',
+                'updated_at' => '2017-11-05 13:55:41',
+                'deleted_at' => NULL,
+            ),
+            40 => 
+            array (
+                'id' => 41,
+                'title' => '枕芯',
+                'image' => NULL,
+                'parent_id' => 18,
+                'description' => NULL,
+                'order' => NULL,
+                'created_at' => '2017-11-05 13:56:19',
+                'updated_at' => '2017-11-05 13:56:19',
+                'deleted_at' => NULL,
+            ),
+            41 => 
+            array (
+                'id' => 42,
+                'title' => '枕套',
+                'image' => NULL,
+                'parent_id' => 18,
+                'description' => NULL,
+                'order' => NULL,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'deleted_at' => NULL,
+            ),
+            42 => 
+            array (
+                'id' => 43,
+                'title' => '床单',
+                'image' => NULL,
+                'parent_id' => 18,
+                'description' => NULL,
+                'order' => NULL,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'deleted_at' => NULL,
+            ),
+            43 => 
+            array (
+                'id' => 44,
+                'title' => '被套',
+                'image' => NULL,
+                'parent_id' => 18,
+                'description' => NULL,
+                'order' => NULL,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'deleted_at' => NULL,
+            ),
+            44 => 
+            array (
+                'id' => 45,
+                'title' => '餐巾',
+                'image' => NULL,
+                'parent_id' => 18,
+                'description' => NULL,
+                'order' => NULL,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'deleted_at' => NULL,
+            ),
+            45 => 
+            array (
+                'id' => 46,
+                'title' => '桌布',
+                'image' => NULL,
+                'parent_id' => 18,
+                'description' => NULL,
+                'order' => NULL,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'deleted_at' => NULL,
+            ),
+            46 => 
+            array (
+                'id' => 47,
+                'title' => '座椅套',
+                'image' => NULL,
+                'parent_id' => 18,
+                'description' => NULL,
+                'order' => NULL,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'deleted_at' => NULL,
+            ),
+            47 => 
+            array (
+                'id' => 48,
+                'title' => '合作地区',
+                'image' => NULL,
+                'parent_id' => 0,
+                'description' => NULL,
+                'order' => 6,
+                'created_at' => '2017-11-05 16:21:37',
+                'updated_at' => '2017-11-05 16:21:37',
+                'deleted_at' => NULL,
+            ),
+            48 => 
+            array (
+                'id' => 49,
+                'title' => '欧洲地区',
+                'image' => NULL,
+                'parent_id' => 48,
+                'description' => NULL,
+                'order' => NULL,
+                'created_at' => '2017-11-05 16:22:59',
+                'updated_at' => '2017-11-05 16:22:59',
+                'deleted_at' => NULL,
+            ),
+            49 => 
+            array (
+                'id' => 50,
+                'title' => '北美地区',
+                'image' => NULL,
+                'parent_id' => 48,
+                'description' => NULL,
+                'order' => NULL,
+                'created_at' => '2017-11-05 16:23:12',
+                'updated_at' => '2017-11-05 16:23:12',
+                'deleted_at' => NULL,
+            ),
+            50 => 
+            array (
+                'id' => 51,
+                'title' => '南美地区',
+                'image' => NULL,
+                'parent_id' => 48,
+                'description' => NULL,
+                'order' => NULL,
+                'created_at' => '2017-11-05 16:23:24',
+                'updated_at' => '2017-11-05 16:23:24',
+                'deleted_at' => NULL,
+            ),
+            51 => 
+            array (
+                'id' => 52,
+                'title' => '中东地区',
+                'image' => NULL,
+                'parent_id' => 48,
+                'description' => NULL,
+                'order' => NULL,
+                'created_at' => '2017-11-05 16:23:41',
+                'updated_at' => '2017-11-05 16:23:41',
+                'deleted_at' => NULL,
+            ),
+            52 => 
+            array (
+                'id' => 53,
+                'title' => '东南亚地区',
+                'image' => NULL,
+                'parent_id' => 48,
+                'description' => NULL,
+                'order' => NULL,
+                'created_at' => '2017-11-05 16:23:54',
+                'updated_at' => '2017-11-05 16:23:54',
+                'deleted_at' => NULL,
+            ),
+            53 => 
+            array (
+                'id' => 54,
+                'title' => '澳洲地区',
+                'image' => NULL,
+                'parent_id' => 48,
+                'description' => NULL,
+                'order' => NULL,
+                'created_at' => '2017-11-05 16:24:07',
+                'updated_at' => '2017-11-05 16:24:07',
+                'deleted_at' => NULL,
+            ),
+            54 => 
+            array (
+                'id' => 55,
+                'title' => '非洲地区',
+                'image' => NULL,
+                'parent_id' => 48,
+                'description' => NULL,
+                'order' => NULL,
+                'created_at' => '2017-11-05 16:24:19',
+                'updated_at' => '2017-11-05 16:24:19',
+                'deleted_at' => NULL,
+            ),
+        ));
+        
+        
     }
 }

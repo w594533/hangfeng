@@ -23,4 +23,14 @@ Route::group(['namespace' => 'Api', 'prefix' => 'v1'], function () {
   Route::get('/product', 'ProductController@index')->name('product');
 
   Route::get('/cooperation', 'HomeController@cooperation')->name('cooperation');
+
+  Route::get('/contact', 'HomeController@contact')->name('contact');
+
+  Route::get('/about', 'HomeController@about')->name('about');
+
+  Route::get('/system_info', 'HomeController@systems_info')->name('systems_info');
+
+  Route::get('/join', 'JoinController@index')->name('index');
+
+  Route::get('/news', 'NewsController@index')->name('index');
 });

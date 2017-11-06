@@ -14,7 +14,9 @@ class DatabaseSeeder extends Seeder
          $this->call(AdminsMenuTableSeeder::class);
          $this->call(CategoriesTableSeeder::class);
          $this->call(PostsTableSeeder::class);
-         $this->call(AtlasTableSeeder::class);
-         $this->call(SystemInfoTableSeeder::class);
+         $this->call(CooperationTableSeeder::class);
+        //  $this->call(AtlasTableSeeder::class);
+         $this->call(ProductTableSeeder::class);
+         $this->call(SystemInfosTableSeeder::class);
     }
 }

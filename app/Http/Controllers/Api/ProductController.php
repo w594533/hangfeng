@@ -11,19 +11,18 @@ class ProductController extends Controller
 {
     public function index()
     {
-      $datas = array();
+      $result = [];
+      $result['title'] = [
+        'PRODUCT DISPLAY',
+        trans("home.banner_title")
+      ];
       $categories = Category::where('parent_id', 7)->get();
       foreach ($categories as $key => $category) {
         $datas[$key]['product'] = $category->title;
         $products = Category::where('parent_id', $category->id)->with('products')->get();
-        $datas[$key]['item'] = Category::where('parent_id', $category->id)->with('products')->get();
+        $datas[$key]['item'] = Category::where('parent_id', $category->id)->select("id", "title")->with('products')->get();
       }
-      return response()->json($datas, 200);
-    }
-
-    public function show(Product $product, Request $request)
-    {
-      dd($product);
-      return response()->json($product, 200);
+      $result['list'] = $datas;
+      return response()->json($result, 200);
     }
 }

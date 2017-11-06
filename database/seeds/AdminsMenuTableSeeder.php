@@ -72,193 +72,184 @@ class AdminsMenuTableSeeder extends Seeder
 
         // add default menus.
         Menu::truncate();
-        Menu::insert([
-            [
+        Menu::insert(array (
+            0 =>
+            array (
+                'id' => 1,
                 'parent_id' => 0,
-                'order'     => 1,
-                'title'     => '首页',
-                'icon'      => 'fa-bar-chart',
-                'uri'       => '/',
-            ],
-            [
+                'order' => 1,
+                'title' => '首页',
+                'icon' => 'fa-bar-chart',
+                'uri' => '/',
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            1 =>
+            array (
+                'id' => 2,
                 'parent_id' => 0,
-                'order'     => 2,
-                'title'     => '后台管理',
-                'icon'      => 'fa-tasks',
-                'uri'       => '',
-            ],
-            [
+                'order' => 2,
+                'title' => '后台管理',
+                'icon' => 'fa-tasks',
+                'uri' => '',
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            2 =>
+            array (
+                'id' => 3,
                 'parent_id' => 2,
-                'order'     => 3,
-                'title'     => '用户',
-                'icon'      => 'fa-users',
-                'uri'       => 'auth/users',
-            ],
-            [
+                'order' => 3,
+                'title' => '用户',
+                'icon' => 'fa-users',
+                'uri' => 'auth/users',
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            3 =>
+            array (
+                'id' => 4,
                 'parent_id' => 2,
-                'order'     => 4,
-                'title'     => '规则',
-                'icon'      => 'fa-user',
-                'uri'       => 'auth/roles',
-            ],
-            [
+                'order' => 4,
+                'title' => '规则',
+                'icon' => 'fa-user',
+                'uri' => 'auth/roles',
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            4 =>
+            array (
+                'id' => 5,
                 'parent_id' => 2,
-                'order'     => 5,
-                'title'     => '权限',
-                'icon'      => 'fa-ban',
-                'uri'       => 'auth/permissions',
-            ],
-            [
+                'order' => 5,
+                'title' => '权限',
+                'icon' => 'fa-ban',
+                'uri' => 'auth/permissions',
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            5 =>
+            array (
+                'id' => 6,
                 'parent_id' => 2,
-                'order'     => 6,
-                'title'     => '菜单',
-                'icon'      => 'fa-bars',
-                'uri'       => 'auth/menu',
-            ],
-            [
+                'order' => 6,
+                'title' => '菜单',
+                'icon' => 'fa-bars',
+                'uri' => 'auth/menu',
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            6 =>
+            array (
+                'id' => 7,
                 'parent_id' => 2,
-                'order'     => 7,
-                'title'     => 'Operation log',
-                'icon'      => 'fa-history',
-                'uri'       => 'auth/logs',
-            ],
-            [
+                'order' => 7,
+                'title' => 'Operation log',
+                'icon' => 'fa-history',
+                'uri' => 'auth/logs',
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            7 =>
+            array (
+                'id' => 8,
                 'parent_id' => 0,
-                'order'     => 7,
-                'title'     => '分类管理',
-                'icon'      => 'fa-th-large',
-                'uri'       => 'categories',
-            ],
-            [
+                'order' => 7,
+                'title' => '分类管理',
+                'icon' => 'fa-th-large',
+                'uri' => 'categories',
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            8 =>
+            array (
+                'id' => 13,
                 'parent_id' => 0,
-                'order'     => 7,
-                'title'     => '品牌故事',
-                'icon'      => 'fa-info-circle',
-                'uri'       => '',
-            ],
-            [
-                'parent_id' => 9,
-                'order'     => 7,
-                'title'     => '品牌介绍',
-                'icon'      => 'fa-tasks',
-                'uri'       => 'company_introduce',
-            ],
-            [
-                'parent_id' => 9,
-                'order'     => 7,
-                'title'     => '品牌荣誉',
-                'icon'      => 'fa-anchor',
-                'uri'       => 'company_honor',
-            ],
-            [
-                'parent_id' => 9,
-                'order'     => 7,
-                'title'     => '公司愿景',
-                'icon'      => 'fa-adn',
-                'uri'       => 'company_hope',
-            ],
-            //id => 13
-            [
+                'order' => 7,
+                'title' => '产品中心',
+                'icon' => 'fa-ils',
+                'uri' => 'products',
+                'created_at' => NULL,
+                'updated_at' => '2017-11-06 15:14:26',
+            ),
+            9 =>
+            array (
+                'id' => 20,
                 'parent_id' => 0,
-                'order'     => 7,
-                'title'     => '产品中心',
-                'icon'      => 'fa-ils',
-                'uri'       => '',
-            ],
-            [
-                'parent_id' => 13,
-                'order'     => 7,
-                'title'     => '航空座椅外套',
-                'icon'      => 'fa-adn',
-                'uri'       => 'air_seat_jacket',
-            ],
-            [
-                'parent_id' => 13,
-                'order'     => 8,
-                'title'     => '航空毛毯',
-                'icon'      => 'fa-desktop',
-                'uri'       => 'aviation_blanket',
-            ],
-            [
-                'parent_id' => 13,
-                'order'     => 8,
-                'title'     => '无纺布产品',
-                'icon'      => 'fa-gg',
-                'uri'       => 'non_woven_products',
-            ],
-            [
-                'parent_id' => 13,
-                'order'     => 9,
-                'title'     => '航空单品',
-                'icon'      => 'fa-flickr',
-                'uri'       => 'aviation_item',
-            ],
-            [
-                'parent_id' => 13,
-                'order'     => 10,
-                'title'     => '其他航空单品',
-                'icon'      => 'fa-flickr',
-                'uri'       => 'aviation_item',
-            ],
-            [
-                'parent_id' => 13,
-                'order'     => 10,
-                'title'     => '酒店纺织产品',
-                'icon'      => 'fa-facebook',
-                'uri'       => 'hotel_textile_product',
-            ],
-            #20
-            [
-                'parent_id' => 0,
-                'order'     => 10,
-                'title'     => '新闻中心',
-                'icon'      => 'fa-newspaper-o',
-                'uri'       => '',
-            ],
-            [
+                'order' => 10,
+                'title' => '新闻中心',
+                'icon' => 'fa-newspaper-o',
+                'uri' => '',
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            10 =>
+            array (
+                'id' => 21,
                 'parent_id' => 20,
-                'order'     => 1,
-                'title'     => '公司动态',
-                'icon'      => 'fa-newspaper-o',
-                'uri'       => 'company_dynamics',
-            ],
-            [
+                'order' => 1,
+                'title' => '公司动态',
+                'icon' => 'fa-newspaper-o',
+                'uri' => 'company_dynamics',
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            11 =>
+            array (
+                'id' => 22,
                 'parent_id' => 20,
-                'order'     => 10,
-                'title'     => '行业资讯',
-                'icon'      => 'fa-newspaper-o',
-                'uri'       => 'industry_information',
-            ],
-            [
+                'order' => 10,
+                'title' => '行业资讯',
+                'icon' => 'fa-newspaper-o',
+                'uri' => 'industry_information',
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            12 =>
+            array (
+                'id' => 23,
                 'parent_id' => 20,
-                'order'     => 10,
-                'title'     => '媒体焦点',
-                'icon'      => 'fa-newspaper-o',
-                'uri'       => 'focus_media',
-            ],
-            [
+                'order' => 10,
+                'title' => '媒体焦点',
+                'icon' => 'fa-newspaper-o',
+                'uri' => 'focus_media',
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            13 =>
+            array (
+                'id' => 24,
                 'parent_id' => 20,
-                'order'     => 10,
-                'title'     => '通知公告',
-                'icon'      => 'fa-newspaper-o',
-                'uri'       => 'notice',
-            ],
-            [
+                'order' => 10,
+                'title' => '通知公告',
+                'icon' => 'fa-newspaper-o',
+                'uri' => 'notice',
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            14 =>
+            array (
+                'id' => 25,
                 'parent_id' => 0,
-                'order'     => 10,
-                'title'     => '招贤纳士',
-                'icon'      => 'fa-newspaper-o',
-                'uri'       => 'recruit',
-            ],
-            [
+                'order' => 10,
+                'title' => '招贤纳士',
+                'icon' => 'fa-newspaper-o',
+                'uri' => 'recruit',
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            15 =>
+            array (
+                'id' => 26,
                 'parent_id' => 0,
-                'order'     => 11,
-                'title'     => '联系我们',
-                'icon'      => 'fa-cog',
-                'uri'       => 'system_info',
-            ],
-
-        ]);
+                'order' => 11,
+                'title' => '系统设置',
+                'icon' => 'fa-cog',
+                'uri' => 'system_info',
+                'created_at' => NULL,
+                'updated_at' => '2017-11-06 15:15:10',
+            ),
+        ));
 
         // add role to menu.
         Menu::find(2)->roles()->save(Role::first());
