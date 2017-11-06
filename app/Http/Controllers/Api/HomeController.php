@@ -63,7 +63,28 @@ class HomeController extends Controller
     public function contact()
     {
       $system_info = SystemInfo::find(1);
-      $result = $system_info;
+      $result['contact'] => [
+        [
+          "title" => trans('home.contact.tel'),
+          "value" => $system_info->phone,
+        ],
+        [
+          "title" => trans("home.contact.fax"),
+          "value" => $system_info->facsimile,
+        ],
+        [
+          "title" => trans("home.contact.email"),
+          "value" => $systems_info->email,
+        ],
+        [
+          "title" => trans("home.contact.address"),
+          "value" => $systems_info->address
+        ],
+        [
+          "title" => trans("home.contact.postal"),
+          "value" => 311800
+        ]
+      ];
       $result['name'] = trans("home.menu.contact_us");
       $result['title'] = array(
         'CONTACT US',
@@ -121,11 +142,15 @@ class HomeController extends Controller
 
     public function systems_info()
     {
+      $menu_product = Category::where("parent_id", 7)->select("id", "title")->get();
+      $menu_news = Category::where("parent_id", 19)->select("id", "title")->get();
+      $menu_about = Category::where("parent_id", 1)->select("id", "title")->get();
+
       $result['nav'] = [
         ["title" => trans("home.menu.home")],
-    		["title" => trans("home.menu.about"), "detail" => [trans("home.menu_about")]],
-    		["title" => trans("home.menu.product"), "detail" => [trans('home.menu_product')]],
-    		["title" => trans("home.menu.news"), "detail" => [trans('home.menu_news')]],
+    		["title" => trans("home.menu.about"), "detail" => $menu_about],
+    		["title" => trans("home.menu.product"), "detail" => $menu_product],
+    		["title" => trans("home.menu.news"), "detail" => $menu_news],
     		["title" => trans("home.menu.join_us")],
     		["title" => trans("home.menu.contact_us")]
       ];
