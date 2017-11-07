@@ -33,4 +33,6 @@ Route::group(['namespace' => 'Api', 'prefix' => 'v1'], function () {
   Route::get('/join', 'JoinController@index')->name('index');
 
   Route::get('/news', 'NewsController@index')->name('index');
+
+  Route::get('/news/{post}', 'NewsController@show')->name('news.show');
 });

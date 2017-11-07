@@ -28,4 +28,9 @@ class NewsController extends Controller
       $result['list'] = $news_posts;
       return response()->json($result, 200);
     }
+
+    public function show(Post $post)
+    {
+      return response()->json($post, 200);
+    }
 }
