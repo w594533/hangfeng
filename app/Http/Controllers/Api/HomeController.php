@@ -97,6 +97,7 @@ class HomeController extends Controller
     public function about()
     {
       $system_info = SystemInfo::find(1);
+      $menu_about = Category::where("parent_id", 1)->select("id", "title")->get();
       $result['title'] = array(
         'ABOUT US',
         trans("home.banner_title")
@@ -108,7 +109,7 @@ class HomeController extends Controller
       $result['router'] = array(
         "title" => trans("home.about.router.title"),
         "desc" => trans("home.about.router.desc"),
-        "nav" => trans("home.menu_about"),
+        "nav" => $menu_about,
         "data" => [
           "show" => $system_info->about_show_business_images,
           "honor" => $system_info->about_honor_images,
