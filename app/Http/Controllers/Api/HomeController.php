@@ -146,6 +146,7 @@ class HomeController extends Controller
       $menu_product = Category::where("parent_id", 7)->select("id", "title")->get();
       $menu_news = Category::where("parent_id", 19)->select("id", "title")->get();
       $menu_about = Category::where("parent_id", 1)->select("id", "title")->get();
+      $system_info = SystemInfo::find(1);
 
       $result['nav'] = [
         ["title" => trans("home.menu.home")],
@@ -154,6 +155,11 @@ class HomeController extends Controller
     		["title" => trans("home.menu.news"), "detail" => $menu_news],
     		["title" => trans("home.menu.join_us")],
     		["title" => trans("home.menu.contact_us")]
+      ];
+      $result['meta'] = [
+        'meta_title' => $system_info->meta_title,
+        'meta_keywords' => $system_info->meta_keywords,
+        'meta_description' => $system_info->meta_description
       ];
       return response()->json($result, 200);
     }

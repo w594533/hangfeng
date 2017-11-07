@@ -114,6 +114,10 @@ class SystemInfoController extends Controller
             $form->multipleImage('about_honor_images', '荣誉资质')->help('多图上传')->removable()->move('/upload/system_info/image');
             $form->text('about_vision_title', '发展愿景标题');
             $form->editor('about_vision_body', '发展愿景内容');
+          })->tab('Meta优化', function($form) {
+            $form->text("meta_title", '标题');
+            $form->text('meta_keywords', '关键词');
+            $form->text('meta_description', '描述');
           });
 
 
