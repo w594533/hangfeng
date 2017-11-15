@@ -17,14 +17,14 @@ class HomeController extends Controller
     {
       $data = array(
         array(
-          'img' => config('app.url') . '/img/banner1.jpg',
+          'img' => config('app.url') . '/img/banner2.jpg',
           'name' => trans("home.home_banner.first.name"),
           'desc' => trans("home.home_banner.first.desc"),
           'en' => trans("home.home_banner.first.en"),
           'more' => trans("home.view_detail"),
         ),
         array(
-          'img' => config('app.url') . '/img/banner2.jpg',
+          'img' => config('app.url') . '/img/banner4.jpg',
           'name' => trans("home.home_banner.second.name"),
           'desc' => trans("home.home_banner.second.desc"),
           'en' => trans("home.home_banner.second.en"),
@@ -38,7 +38,7 @@ class HomeController extends Controller
           'more' => trans("home.view_detail"),
         ),
         array(
-          'img' => config('app.url') . '/img/banner4.jpg',
+          'img' => config('app.url') . '/img/banner1.jpg',
           'name' => trans("home.home_banner.fourth.name"),
           'desc' => trans("home.home_banner.fourth.desc"),
           'en' => trans("home.home_banner.fourth.en"),
