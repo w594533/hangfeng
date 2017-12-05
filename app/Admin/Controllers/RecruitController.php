@@ -93,10 +93,13 @@ class RecruitController extends Controller
         return Admin::form(Post::class, function (Form $form) {
 
             $form->display('id', 'ID');
-            $form->text('title', '职位名称');
+            $form->text('name', '职位名称');
             $form->editor('slug', '职位描述');
             $form->display('created_at', '创建时间');
             $form->display('updated_at', '更新时间');
+            $form->saving(function(Form $form){
+                $form->category_id = '24';
+            });
         });
     }
 }

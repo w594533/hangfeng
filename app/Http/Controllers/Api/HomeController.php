@@ -111,8 +111,8 @@ class HomeController extends Controller
         "desc" => trans("home.about.router.desc"),
         "nav" => $menu_about,
         "data" => [
-          "show" => $system_info->about_show_business_images,
-          "honor" => $system_info->about_honor_images,
+          "show" => $system_info->about_show_business_images_path,
+          "honor" => $system_info->about_honor_images_path,
           "partner" => [
             "title" => trans("home.about.router.partner.title"),
             "img" => config('app.url') . '/img/about_partner.png',

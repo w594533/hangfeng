@@ -16,7 +16,7 @@ class CreateCooperationsTable extends Migration
         Schema::create('cooperations', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name')->comment('名称');
-            $table->string('logo')->comment('logo图片');
+            $table->string('logo')->nullable()->default('')->comment('logo图片');
             $table->integer('category_id')->unsigned()->nullable()->comment('分类Id');
             $table->foreign('category_id')->references('id')->on('categories');
             $table->timestamps();

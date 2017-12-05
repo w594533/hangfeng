@@ -19,7 +19,7 @@ class CreateSystemInfosTable extends Migration
             $table->string('phone')->index()->coment('总机');
             $table->string('facsimile')->index()->comment('传真');
             $table->string('email')->index()->comment('邮箱');
-            $table->string('image')->index()->comment('地图');
+            $table->string('image')->nullable()->comment('地图');
             $table->string('contract_person', 20)->index()->comment('联系人');
             $table->string('hr_email')->nullable()->comment('招聘邮箱');
             $table->text('about_body')->nullable()->comment('航丰概况内容');

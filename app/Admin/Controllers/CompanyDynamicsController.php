@@ -104,14 +104,14 @@ class CompanyDynamicsController extends Controller
 
             $form->display('id', 'ID');
             $form->text('category_id', '归属')->default('公司动态');
-            $form->text('title', '标题');
+            $form->text('name', '标题');
             $form->editor('slug', '内容');
-            $form->image('cover', '配图')->uniqueName()->move('/upload/company_dynamics/image');
+            $form->image('cover', '配图')->removable()->uniqueName()->move('/upload/company_dynamics/image');
             $form->display('created_at', 'Created At');
             $form->display('updated_at', 'Updated At');
 
             $form->saving(function(Form $form){
-                $form->category_id = '21';
+                $form->category_id = '20';
             });
         });
     }

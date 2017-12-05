@@ -88,7 +88,7 @@ class CategoriesController extends Controller
             $form->display('id', 'ID');
             $form->select('parent_id', '父级分类')->options(Category::selectOptions());
             $form->text('title', '分类名称');
-            $form->image('image', '分类配图')->uniqueName()->move('/upload/category/image');
+            $form->image('image', '分类配图')->removable()->uniqueName()->move('/upload/category/image');
             $form->textarea('description', '分类描述');
             $form->display('created_at', 'Created At');
             $form->display('updated_at', 'Updated At');

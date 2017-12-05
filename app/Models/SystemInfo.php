@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class SystemInfo extends Model
 {
+    protected $appends = ['about_show_business_images_path', 'about_honor_images_path'];
     protected $fillable = [
         'address', 'email', 'phone', 'facsimile', 'contract_person', 'image'
     ];
@@ -21,8 +22,20 @@ class SystemInfo extends Model
     {
       if ($about_show_business_images) {
         return array_map(function($value) {
-          return config('app.url'). '/storage/'. $value;
+          return $value;
         }, json_decode($about_show_business_images, true));
+      } else {
+        return array();
+      }
+
+    }
+
+    public function getAboutShowBusinessImagesPathAttribute($about_show_business_images)
+    {
+      if ($this->attributes['about_show_business_images']) {
+        return array_map(function($value) {
+          return config('app.url'). '/storage/'. $value;
+        }, json_decode($this->attributes['about_show_business_images'], true));
       } else {
         return array();
       }
@@ -40,12 +53,21 @@ class SystemInfo extends Model
     {
       if ($about_honor_images) {
         return array_map(function($value) {
-          return config('app.url'). '/storage/'. $value;
+          return $value;
         }, json_decode($about_honor_images, true));
       } else {
         return array();
       }
+    }
 
-
+    public function getAboutHonorImagesPathAttribute($about_honor_images)
+    {
+      if ($this->attributes['about_honor_images']) {
+        return array_map(function($value) {
+          return config('app.url'). '/storage/'. $value;
+        }, json_decode($this->attributes['about_honor_images'], true));
+      } else {
+        return array();
+      }
     }
 }

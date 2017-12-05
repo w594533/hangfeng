@@ -103,7 +103,7 @@ class OtherItemController extends Controller
             $form->display('id', 'ID');
             $form->select('category_id', '归属')->options(collect(Category::where('parent_id', 9)->get())->pluck('title', 'id'));
 
-            $form->image('image', '图片')->uniqueName()->move('/upload/air_seat_jacket');
+            $form->image('image', '图片')->removable()->uniqueName()->move('/upload/air_seat_jacket');
             $form->text('description', '描述');
             $form->display('created_at', 'Created At');
             $form->display('updated_at', 'Updated At');

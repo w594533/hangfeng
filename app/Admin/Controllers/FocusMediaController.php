@@ -76,14 +76,13 @@ class FocusMediaController extends Controller
             $grid->id('ID')->sortable();
             $grid->name('标题');
             //$grid->slug('内容');
-            $grid->cover('配图')->display(function(){
-                if (is_null($this->cover) || empty($this->cover)) {
-                    return "暂无图片哦!~";
+            $grid->cover('配图')->display(function ($cover) {
+                if (empty($cover) || is_null($cover)) {
+                    return '暂无图片';
                 }
-
-                $image = config('app.url') . '/storage/' . $this->cover;
-                return '<img src="'. $image.'" width="100">';
-            });
+                $imges = explode(',', $cover);
+                return $imges;
+            })->image('',100);
             $grid->category_id('归属')->display(function(){
                 return Category::findOrFail($this->category_id)->title;
             })->badge('green');
@@ -102,11 +101,14 @@ class FocusMediaController extends Controller
         return Admin::form(Post::class, function (Form $form) {
 
             $form->display('id', 'ID');
-            $form->text('title', '标题');
+            $form->text('name', '标题');
             $form->editor('slug', '内容');
-            $form->image('cover', '配图')->uniqueName()->move('/upload/company_dynamics/image');
+            $form->image('cover', '配图')->removable()->uniqueName()->move('/upload/company_dynamics/image');
             $form->display('created_at', 'Created At');
             $form->display('updated_at', 'Updated At');
+            $form->saving(function(Form $form){
+                $form->category_id = '22';
+            });
         });
     }
 }

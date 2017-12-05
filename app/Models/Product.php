@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
+    protected $appends = ['img_path'];
+
     public function category()
     {
       return $this->belongsTo('App\Models\Category');
@@ -20,11 +22,29 @@ class Product extends Model
 
     public function getImgAttribute($img)
     {
+      if ($img) {
+        return array_map(function($value) {
+          return $value;
+        }, json_decode($img, true));
+      } else {
+        return array();
+      }
 
-      return array_map(function($value) {
-        return config('app.url'). '/storage/'. $value;
-      }, json_decode($img, true));
     }
+
+    public function getImgPathAttribute()
+    {
+      
+      if ($this->attributes['img']) {
+        return array_map(function($value) {
+          return config('app.url').'/storage/'.$value;
+        }, json_decode($this->attributes['img'], true));
+      } else {
+        return array();
+      }
+
+    }
+
 
     public function setDetailAttribute($detail)
     {
