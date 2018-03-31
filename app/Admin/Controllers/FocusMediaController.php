@@ -84,7 +84,7 @@ class FocusMediaController extends Controller
                 return $imges;
             })->image('',100);
             $grid->category_id('归属')->display(function(){
-              $category = Category::findOrFail($this->category_id);
+              $category = Category::find($this->category_id);
               return $category?$category->title:'';
             })->badge('green');
             $grid->created_at('创建时间');

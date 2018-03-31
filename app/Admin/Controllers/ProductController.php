@@ -76,8 +76,8 @@ class ProductController extends Controller
             $grid->id('ID')->sortable();
             $grid->name('名称');
             $grid->category_id('所属分类')->display(function(){
-                $category = Category::findOrFail($this->category_id);
-                return $category?$category->title:'';
+              $category = Category::find($this->category_id);
+              return $category?$category->title:'';
             })->badge('green');
             // 显示多图
             $grid->img('图片')->image('', 100, 100);
