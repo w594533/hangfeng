@@ -76,7 +76,8 @@ class RecruitController extends Controller
             $grid->id('ID')->sortable();
             $grid->name('职位名称');
             $grid->category_id('归属')->display(function(){
-                return Category::findOrFail($this->category_id)->title;
+              $category = Category::findOrFail($this->category_id);
+              return $category?$category->title:'';
             })->badge('green');
             $grid->created_at('创建时间');
             $grid->updated_at('发布时间');

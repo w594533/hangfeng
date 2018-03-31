@@ -78,7 +78,8 @@ class CooperationController extends Controller
             $grid->name('名称');
             $grid->logo('LOGO')->image('', 100, 100);
             $grid->category_id('所属分类')->display(function(){
-                return Category::findOrFail($this->category_id)->title;
+              $category = Category::findOrFail($this->category_id);
+              return $category?$category->title:'';
             })->badge('green');
             $grid->created_at();
             $grid->updated_at();
